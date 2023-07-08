@@ -1,1 +1,1 @@
-Videoroom - A video and audio based communication mobile application.
+Videoroom - A video and audio based communication platform.
