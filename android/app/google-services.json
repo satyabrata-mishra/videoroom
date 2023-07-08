@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "76524011647",
+    "project_id": "final-videoroom",
+    "storage_bucket": "final-videoroom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76524011647:android:307548168ec7feece37f4a",
+        "android_client_info": {
+          "package_name": "com.example.videoroom_new"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76524011647-lavn2r3n426g165v398uhhr7l3q01lpp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgbBlKA08cVXXgsR9XgfHYb75yyLuE-7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76524011647-lavn2r3n426g165v398uhhr7l3q01lpp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

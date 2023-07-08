@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>76524011647-2m0oa73f4fvbqujjsh2ltes34cs9jpu5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.76524011647-2m0oa73f4fvbqujjsh2ltes34cs9jpu5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDSOiwEp7AUmE-nk2OMjroh5zZCc2um_H4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>76524011647</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.videoroomNew</string>
+	<key>PROJECT_ID</key>
+	<string>final-videoroom</string>
+	<key>STORAGE_BUCKET</key>
+	<string>final-videoroom.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:76524011647:ios:b871751b9827f466e37f4a</string>
+</dict>
+</plist>
