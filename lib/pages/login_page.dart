@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import './home_page.dart';
+import 'switch_screen.dart';
 
-import '../widgets/button_widget.dart';
+import '../widgets/image_button_widget.dart';
 import '../widgets/snackbar_widget.dart';
 import '../widgets/text_widget.dart';
 
@@ -17,12 +17,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   @override
   void initState() {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (user != null) {
-        Navigator.pushNamed(context, HomePage.routeName);
+        Navigator.pushNamed(context, SwitchScreen.routeName);
       }
     });
     // TODO: implement initState
@@ -50,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
       UserCredential user =
           await FirebaseAuth.instance.signInWithCredential(credentials);
       if (user.user != null) {
-        Navigator.pushNamed(context, HomePage.routeName);
+        Navigator.pushNamed(context, SwitchScreen.routeName);
       }
       // setState(() {
       //   isLoading1 = false;
@@ -76,45 +75,45 @@ class _LoginPageState extends State<LoginPage> {
     );
     return Scaffold(
       body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextWidget(
-              "Welcome!",
-              mediaQuery.size.width * 0.11,
-              FontWeight.w800,
-              1,
-            ),
-            TextWidget(
-              "Login or signup with google!",
-              mediaQuery.size.width * 0.051,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextWidget(
+            "Welcome!",
+            mediaQuery.size.width * 0.11,
+            FontWeight.w800,
+            1,
+          ),
+          TextWidget(
+            "Login or signup with google!",
+            mediaQuery.size.width * 0.051,
+            FontWeight.w500,
+            1.4,
+          ),
+          divider,
+          ButtonWidget(
+            mediaQuery.size.height * 0.08,
+            mediaQuery.size.width * 0.9,
+            Colors.black26,
+            "lib/assets/google.png",
+            "Continue with Google",
+            21,
+            FontWeight.w500,
+            30,
+            googleSignIn,
+          ),
+          divider,
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+            child: TextWidget(
+              "*By signing in you agree with our terms and conditions.",
+              16,
               FontWeight.w500,
-              1.4,
+              0,
             ),
-            divider,
-            ButtonWidget(
-              mediaQuery.size.height * 0.08,
-              mediaQuery.size.width * 0.9,
-              Colors.black26,
-              "lib/assets/google.png",
-              "Continue with Google",
-              21,
-              FontWeight.w500,
-              30,
-              googleSignIn,
-            ),
-            divider,
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
-              child: TextWidget(
-                "*By signing in you are agree with terms and conditions.",
-                16,
-                FontWeight.w500,
-                0,
-              ),
-            )
-          ],
-        ),
+          )
+        ],
+      ),
     );
   }
 }

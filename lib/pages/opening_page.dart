@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import 'switch_screen.dart';
 import 'login_page.dart';
 
 class OpeningPage extends StatefulWidget {
@@ -22,9 +22,9 @@ class _OpeningPageState extends State<OpeningPage> {
     super.initState();
     Timer(
         const Duration(seconds: 2),
-            () => user == null
+        () => user == null
             ? Navigator.pushNamed(context, LoginPage.routeName)
-            : Navigator.pushNamed(context, HomePage.routeName));
+            : Navigator.pushNamed(context, SwitchScreen.routeName));
   }
 
   @override
