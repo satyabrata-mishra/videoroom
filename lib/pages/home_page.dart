@@ -1,8 +1,10 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/generate_room_id.dart';
 
+import 'call_page.dart';
 import 'login_page.dart';
 
 import '../widgets/icon_button_widget.dart';
@@ -71,7 +73,30 @@ class _HomePageState extends State<HomePage> {
   }
 
   void createRoom() {
-    print("Created room id id ${generateRoomId()}");
+    String roomId = generateRoomId();
+    // SnackbarWidget(context, "Your room id is $roomId", Colors.green);
+    AwesomeDialog(
+      context: context,
+      dialogType: DialogType.success,
+      animType: AnimType.scale,
+      title: "Your Room ID is $roomId",
+      desc:
+          "Note : Share your room ID with the room members before you join. Once you join the room your Room ID will be no more visible.",
+      btnCancelOnPress: () {},
+      btnOkOnPress: () {
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) {
+            return CallPage(
+              roomId,
+              user?.uid as String,
+              user?.displayName as String,
+            );
+          },
+        ));
+      },
+      btnCancelText: "CANCEL",
+      btnOkText: "JOIN ROOM",
+    ).show();
   }
 
   void joinRoom() {
@@ -83,6 +108,16 @@ class _HomePageState extends State<HomePage> {
       SnackbarWidget(context, "Room id should be of 6 digits.", Colors.red);
       return;
     }
+    // SnackbarWidget(context, "Your room id is ${joinRoomId.text}", Colors.green);
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) {
+        return CallPage(
+          joinRoomId.text,
+          user?.uid as String,
+          user?.displayName as String,
+        );
+      },
+    ));
   }
 
   @override
